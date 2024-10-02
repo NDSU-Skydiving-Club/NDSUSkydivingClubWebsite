@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Frequently Asked Questions</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center vertically */
+      align-items: center;    /* Center horizontally */
+      padding: 2rem;
+      margin: 0;
+      color: rgb(255, 200, 46); /* Set font color for all text */
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: rgb(255, 200, 46); /* Ensure header also uses the same font color */
+    }
+
+    .faq-section {
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .faq-question {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .faq-answer {
+      font-size: 1.1em;
+      display: none;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .faq-question:hover, 
+     
+    h1:hover {
+      color: rgba(255, 200, 46, 0.5); /* Apply hover effect */
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="line-container">
+          <div class="line"></div>
+        </div>
+        <div class="text-container">
+          <a href="../index.html" class="header-text">back</a>
+        </div>
+      </header>
+
+    
+  <h1>f a q</h1>
+
+  <div class="faq-section">
+    <div class="faq-question">What is your return policy?</div>
+    <div class="faq-answer">We offer a 30-day return policy. You can return any product within 30 days of purchase for a full refund.</div>
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-question">How do I track my order?</div>
+    <div class="faq-answer">You will receive an email with a tracking link once your order has shipped. You can use that link to track your order's progress.</div>
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-question">What payment methods do you accept?</div>
+    <div class="faq-answer">We accept Visa, MasterCard, American Express, and PayPal.</div>
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-question">Can I change or cancel my order?</div>
+    <div class="faq-answer">Yes, you can change or cancel your order within 24 hours of placing it. After that, we may not be able to accommodate changes.</div>
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-question">Do you ship internationally?</div>
+    <div class="faq-answer">Yes, we ship to over 100 countries worldwide. Shipping fees may vary depending on the destination.</div>
+  </div>
+
+  <footer class="footer">
+    <div class="line-container2">
+      <div class="line2"></div>
+      <div class="line2"></div>
+    </div>
+    <div class="social-container">
+      <a href="https://www.instagram.com/ndsuskydiving?igsh=NTU2ZGhlemtlaDhk&utm_source=qr" target="_blank" class="social-link">
+        <img src="../assets/logos/instagram1.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61564858656823" target="_blank" class="social-link">
+        <img src="../assets/logos/facebook1.png" alt="Facebook" />
+      </a>
+      <a href="https://myndsu.ndsu.edu/organization/skydiving" target="_blank" class="social-link">
+        <img src="../assets/logos/myndsu2.png" alt="myNDSU" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle FAQ answers when a question is clicked
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
