@@ -1,3 +1,8 @@
+:root {
+  --color-bisonYellow: rgba(255, 200, 46, 1);
+  --color-bisonGreen: rgba(0, 86, 67, 1); 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +15,26 @@ body {
   color: white;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
+body.bisonYellow {
+  color: var(--color-bisonYellow); /* Set text color to yellow */
+  
+}
+
+body.bisonGreen {
+  color: var(--color-bisonGreen); /* Set text color to green */
+  
+}
+
+.yellow-background {
+  background-color: var(--color-bisonYellow); /* Background color for yellow elements */
+}
+
+.green-background {
+  background-color: var(--color-bisonGreen); /* Background color for green elements */
+}
+
+
 
 .marquee {
   position: fixed;
@@ -35,7 +60,7 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 10vh; /* Scalable font size */
   font-weight: bold;
-  color: rgba(255, 200, 46, 1); /* Text color for better visibility */
+  color: inherit; /* Text color for better visibility */
   padding-right: 2rem; /* Space between text repetitions */
   display: inline-block;
 }
@@ -150,6 +175,14 @@ img {
   background-color: rgb(255, 200, 46); /* Color of the lines */
 }
 
+.bisonYellow .line {
+  background-color: var(--color-bisonYellow); /* Yellow line */
+}
+
+.bisonGreen .line {
+  background-color: var(--color-bisonGreen); /* Green line */
+}
+
 .text-container {
   display: flex; /* Use flexbox to arrange text in a row */
   justify-content: space-between; /* Space out text */
@@ -157,7 +190,7 @@ img {
 
 .header-text {
   text-decoration: none;
-  color: rgb(255, 200, 46); /* Text color */
+  color: inherit; /* Text color */
   font-size: 1rem; /* Font size of the text */
   text-align: left; /* Left align text under each line */
   width: 20%; /* Match width to lines */
@@ -196,6 +229,14 @@ img {
   width: 33%; /* Width of lines (1/3 of full line) */
   height: 2px; /* Thickness of the lines */
   background-color: rgb(255, 200, 46); /* Color of the lines */
+}
+
+.bisonYellow .line2 {
+  background-color: var(--color-bisonYellow); /* Yellow line */
+}
+
+.bisonGreen .line2 {
+  background-color: var(--color-bisonGreen); /* Green line */
 }
 
 .social-container {
