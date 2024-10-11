@@ -1,190 +1,211 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: white; /* Background color of the whole page */
-    color: white;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
-  
-  .marquee {
-    position: fixed;
-    top: 42.5%; /* Centers the marquee vertically */
-    width: 100%;
-    height: 15vh; /* Takes up 15% of the viewport height */
-    white-space: nowrap;
-    overflow: hidden;
-    z-index: 10;
-    display: flex;
-    align-items: center; /* Center the text vertically */
-    pointer-events: none; /* Allow interaction with underlying content */
-    background-color: transparent; /* No background color */
-  }
-  
-  .marquee-inner {
-    display: flex;
-    white-space: nowrap;
-    animation: marquee 600s linear infinite; /* Infinite scroll with adjusted speed */
-  }
-  
-  .marquee-content {
-    font-family: "Helvetica","Arial", sans-serif;
-    font-size: 5vw; /* Scalable font size */
-    font-weight: bold;
-    color: rgba(255, 200, 46, 1); /* Text color for better visibility */
-    padding-right: 2rem; /* Space between text repetitions */
-    display: inline-block;
-  }
-  
-  /* Keyframes for smooth infinite scrolling */
-  @keyframes marquee {
-    from {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white; /* Background color of the whole page */
+  color: white;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.marquee {
+  position: fixed;
+  top: 42.5%; /* Centers the marquee vertically */
+  width: 100%;
+  height: 15vh; /* Takes up 15% of the viewport height */
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 10;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  pointer-events: none; /* Allow interaction with underlying content */
+  background-color: transparent; /* No background color */
+}
+
+.marquee-inner {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 600s linear infinite; /* Infinite scroll with adjusted speed */
+}
+
+.marquee-content {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 10vh; /* Scalable font size */
+  font-weight: bold;
+  color: rgba(255, 200, 46, 1); /* Text color for better visibility */
+  padding-right: 2rem; /* Space between text repetitions */
+  display: inline-block;
+}
+
+/* Keyframes for smooth infinite scrolling */
+@keyframes marquee {
+  from {
       transform: translateX(0%);
-    }
-    to {
+  }
+  to {
       transform: translateX(-100%);
-    }
   }
-  
-  .image-grid {
-    padding: 20px; /* Padding around the grid */
-    background-color: white; /* White background behind the images */
-    display: flex;
-    flex-direction: column; /* Stack rows vertically */
-    gap: 20px; /* Space between rows */
-  }
-  
+}
+
+.image-grid {
+  padding: 20px; /* Padding around the grid */
+  background-color: white; /* White background behind the images */
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  gap: 20px; /* Space between rows */
+  margin-top: 40px;
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  align-items: center; /* Center the images vertically within the row */
+  gap: 20px; /* Space between images */
+  height: auto; /* Height of each row should be determined by the tallest image */
+ /* flex-wrap: wrap; /* Allow images to wrap onto the next line */
+}
+
+.row img {
+  max-width: 100%; /* Ensure images fit within their container */
+  height: auto; /* Maintain aspect ratio */
+  flex: 1 1 auto;
+}
+
+@media (max-width: 1024px) {
   .row {
-    display: flex;
-    justify-content: center; /* Center the images horizontally */
-    align-items: center; /* Center the images vertically within the row */
-    gap: 20px; /* Space between images */
-    height: auto; /* Height of each row should be determined by the tallest image */
+      flex: 1 1 calc(50% - 20px); /* 2 images per row */
+      flex-wrap: wrap; /* Allow images to wrap onto the next line */
   }
   
-  img {
-    max-width: 100%; /* Ensure images fit within their container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Prevent extra space below images */
+  .row img {
+     /* flex-basis: calc(50% - 10px); /* Each image takes 50% width minus spacing */
+      max-width: 40%; /* Ensure images do not overflow */
   }
+}
 
-  .resized-image1 {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-  }
-  .resized-image2 {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-  }
-  .resized-image3 {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-  }
-  .resized-image4 {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-  }
-  .resized-image5 {
-    width: 400px;
-    height: 200px;
-    object-fit: cover;
-  }
-  .resized-image6 {
-    width: 200px;
-    height: 400px;
-    object-fit: cover;
-  }
+img {
+  max-width: 100%; /* Ensure images fit within their container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent extra space below images */
+}
 
-  .header {
-    position: fixed; /* Fix the header at the top */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width */
-    background-color: rgba(0,0,0,0); /* Background color to match body */
-    padding: 20px;
-    z-index: 1000; /* Ensure it stays above other content */
-  }
-  
-  .line-container {
-    display: flex; /* Use flexbox to arrange lines in a row */
-    justify-content: space-between; /* Space out lines */
-    margin-bottom: 10px; /* Space between lines and text */
-  }
-  
-  .line {
-    width: 20%; /* Adjust width as necessary for spacing */
-    height: 1px; /* Thickness of the lines */
-    background-color: rgb(255, 200, 46); /* Color of the lines */
-  }
-  
-  .text-container {
-    display: flex; /* Use flexbox to arrange text in a row */
-    justify-content: space-between; /* Space out text */
-  }
-  
-  .header-text {
-    text-decoration: none;
-    color: rgb(255, 200, 46); /* Text color */
-    font-size: 1rem; /* Font size of the text */
-    text-align: left; /* Left align text under each line */
-    width: 20%; /* Match width to lines */
-  }
+.resized-image1 {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
 
-  .header-text:hover {
-    color: rgba(255, 200, 46, 0.5);
-  }
-  
-  .content {
-    margin-top: 100px; /* Add top margin to push content below the fixed header */
-    padding: 20px; /* Add padding for content */
-  }
+.resized-image2 {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
 
-  .footer {
-    position: fixed; /* Fix the footer at the bottom */
-    bottom: 0; /* Align to the bottom */
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width */
-    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
-    padding: 0px;
-    color: white; /* Text color */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center align contents */
-    z-index: 1000; /* Ensure it stays above other content */
-  }
-  .line-container2 {
-    display: flex; /* Use flexbox for lines */
-    justify-content: space-between; /* Space out lines */
-    width: 100%; /* Full width */
-  }
-  
-  .line2 {
-    width: 33%; /* Width of lines (1/3 of full line) */
-    height: 2px; /* Thickness of the lines */
-    background-color: rgb(255, 200, 46); /* Color of the lines */
-  }
-  
-  .social-container {
-    display: flex; /* Flexbox for social links */
-    justify-content: center; /* Center social links */
-    margin: 10px 0; /* Margin for spacing */
-  }
-  
-  .social-link img {
-    width: 24px; /* Width of the social logos */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 10px; /* Space between logos */
-  }
+.resized-image3 {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
 
+.resized-image4 {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
 
+.resized-image5 {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+}
 
+.resized-image6 {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+}
 
-  
+.header {
+  position: fixed; /* Fix the header at the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  background-color: rgba(0, 0, 0, 0); /* Background color to match body */
+  padding: 20px;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.line-container {
+  display: flex; /* Use flexbox to arrange lines in a row */
+  justify-content: space-between; /* Space out lines */
+  margin-bottom: 10px; /* Space between lines and text */
+}
+
+.line {
+  width: 20%; /* Adjust width as necessary for spacing */
+  height: 1px; /* Thickness of the lines */
+  background-color: rgb(255, 200, 46); /* Color of the lines */
+}
+
+.text-container {
+  display: flex; /* Use flexbox to arrange text in a row */
+  justify-content: space-between; /* Space out text */
+}
+
+.header-text {
+  text-decoration: none;
+  color: rgb(255, 200, 46); /* Text color */
+  font-size: 1rem; /* Font size of the text */
+  text-align: left; /* Left align text under each line */
+  width: 20%; /* Match width to lines */
+}
+
+.header-text:hover {
+  color: rgba(255, 200, 46, 0.5);
+}
+
+.content {
+  margin-top: 100px; /* Add top margin to push content below the fixed header */
+  padding: 20px; /* Add padding for content */
+}
+
+.footer {
+  position: fixed; /* Fix the footer at the bottom */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+  padding: 0px;
+  color: white; /* Text color */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align contents */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.line-container2 {
+  display: flex; /* Use flexbox for lines */
+  justify-content: space-between; /* Space out lines */
+  width: 100%; /* Full width */
+}
+
+.line2 {
+  width: 33%; /* Width of lines (1/3 of full line) */
+  height: 2px; /* Thickness of the lines */
+  background-color: rgb(255, 200, 46); /* Color of the lines */
+}
+
+.social-container {
+  display: flex; /* Flexbox for social links */
+  justify-content: center; /* Center social links */
+  margin: 10px 0; /* Margin for spacing */
+}
+
+.social-link img {
+  width: 24px; /* Width of the social logos */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 10px; /* Space between logos */
+}
