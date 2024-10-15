@@ -200,6 +200,10 @@ img {
   color: rgba(255, 200, 46, 0.5);
 }
 
+body.bisonGreen .header-text:hover {
+  color: rgba(0, 86, 67, 0.5);
+}
+
 .content {
   margin-top: 100px; /* Add top margin to push content below the fixed header */
   padding: 20px; /* Add padding for content */
