@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Define alternate image sources
     const imageSources = {
-        instagram: currentDay % 2 === 1 ? "/NDSUSkydivingClubWebsite/assets/logos/instagram2.png" : "/NDSUSkydivingClubWebsite/assets/logos/instagram1.png",
-        facebook: currentDay % 2 === 1 ? "/NDSUSkydivingClubWebsite/assets/logos/facebook2.png" : "/NDSUSkydivingClubWebsite/assets/logos/facebook1.png",
-        myndsu: currentDay % 2 === 1 ? "/NDSUSkydivingClubWebsite/assets/logos/myndsu2.png" : "/NDSUSkydivingClubWebsite/assets/logos/myndsu1.png"
+        instagram: currentDay % 2 === 1 ? "assets/logos/instagram2.png" : "assets/logos/instagram1.png",
+        facebook: currentDay % 2 === 1 ? "assets/logos/facebook2.png" : "assets/logos/facebook1.png",
+        myndsu: currentDay % 2 === 1 ? "assets/logos/myndsu2.png" : "assets/logos/myndsu1.png"
     };
 
     // Update footer images based on the current day
